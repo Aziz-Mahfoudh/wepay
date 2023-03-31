@@ -1,12 +1,10 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import Button from "./shared/button/Button";
-
-import "./App.css";
+import BusinessRegistration from "./pages/views/registration/business-registration";
+import { Route, Routes } from "react-router-dom";
+import ParticularRegistration from "./pages/views/registration/particular-registration";
+import Login from "./pages/views/login/login";
 
 function App() {
-  return <Button>Get Started</Button>;
+  return <Login />;
 }
 
 export default App;
