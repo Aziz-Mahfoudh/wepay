@@ -15,6 +15,7 @@ import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const ParticularForm = () => {
   const registrationSchema = Yup.object().shape({
@@ -56,6 +57,17 @@ const ParticularForm = () => {
           lastName: "",
         }}
         onSubmit={(values, { resetForm }) => {
+          axios
+            .post(
+              "http://localhost:8080/api/v1/auth/register",
+              JSON.stringify(values, null, 2)
+            )
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           console.log(JSON.stringify(values, null, 2));
           resetForm();
         }}>

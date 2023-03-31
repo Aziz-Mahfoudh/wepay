@@ -3,9 +3,11 @@ import colors from "./foundations/colors";
 import typography from "./foundations/typography"; 
 
 
+
 const theme = extendTheme({
     colors,
     ...typography,
+  
 }
 )
 
