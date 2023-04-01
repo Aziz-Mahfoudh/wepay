@@ -8,8 +8,11 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { DashboardIcon, GridLower, GridUpperIcon } from "../../assets/icons";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <Center>
       <VStack spacing={10}>
@@ -38,6 +41,7 @@ const Hero = () => {
           </Text>
         </Container>
         <Button
+          onClick={() => navigate("/registration/particular")}
           variant="outline"
           size="lg"
           colorScheme="dark"

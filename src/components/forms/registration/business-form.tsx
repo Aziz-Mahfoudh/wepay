@@ -15,6 +15,7 @@ import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const BusinessForm = () => {
   const registrationSchema = Yup.object().shape({
@@ -33,6 +34,8 @@ const BusinessForm = () => {
       .max(20, "*Too Long!")
       .required("*No store name provided."),
   });
+
+  const navigate = useNavigate();
 
   return (
     <Box maxW="24rem">
@@ -133,6 +136,7 @@ const BusinessForm = () => {
                 ) : null}
                 <Flex>
                   <Button
+                    onClick={() => navigate("/")}
                     mt={4}
                     variant="outline"
                     size="lg"

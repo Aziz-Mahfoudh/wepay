@@ -16,6 +16,7 @@ import PasswordInput from "../../../shared/password-input/password-input";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ParticularForm = () => {
   const registrationSchema = Yup.object().shape({
@@ -35,16 +36,18 @@ const ParticularForm = () => {
       .required("*No last name provided."),
   });
 
+  const navigate = useNavigate();
+
   return (
     <Box maxW="24rem">
       <Heading mb={2} as="h6" fontSize="14px" color="text-header">
-        BUSINESS
+        PARTICULAR
       </Heading>
       <Heading mb={2} as="h2" fontSize="28" color="text-header">
-        Tell us about your store!
+        Tell us about yourself!{" "}
       </Heading>
       <Text mb={8} fontSize="16px" color="text-paragraph">
-        This is an initial information about your business. you can change it
+        This is an initial information about yourself. you can change it
         anytime!
       </Text>
       <Formik
@@ -145,6 +148,7 @@ const ParticularForm = () => {
                 ) : null}
                 <Flex>
                   <Button
+                    onClick={() => navigate("/")}
                     mt={4}
                     variant="outline"
                     size="lg"
